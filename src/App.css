@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+	--primary: hsl(220, 98%, 61%);
+	--check-bg-start: hsl(192, 100%, 67%);
+	--check-bg-end: hsl(280, 87%, 65%);
+	--check-bg: linear-gradient(
+		135deg,
+		var(--check-bg-start) 0%,
+		var(--check-bg-end) 100%
+	);
+	/* light theme */
+	--light-blue-100: hsl(0, 0%, 98%);
+	--light-blue-200: hsl(236, 33%, 92%);
+	--light-blue-300: hsl(233, 11%, 84%);
+	--light-blue-400: hsl(236, 9%, 61%);
+	--light-blue-500: hsl(235, 19%, 35%);
+	/* dark theme */
+	--dark-blue-hover: hsl(236, 33%, 92%);
+	--dark-blue-100: hsl(234, 39%, 85%);
+	--dark-blue-200: hsl(234, 11%, 52%);
+	--dark-blue-300: hsl(233, 14%, 35%);
+	--dark-blue-400: hsl(237, 14%, 26%);
+	--dark-blue-500: hsl(235, 24%, 19%);
+	--dark-blue-600: hsl(235, 21%, 11%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-size: 18px;
+}
+
+body {
+	font-family: "Josefin Sans", sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+	isolation: isolate;
+}
