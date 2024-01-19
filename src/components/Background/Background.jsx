@@ -5,15 +5,13 @@ import darkBgDesktopImg from "../../assets/images/bg-desktop-dark.jpg";
 // import darkBgMobileImg from '../../assets/images/bg-mobile-dark.jpg'
 
 function Background({ theme, children }) {
-	return (
-		<Wrapper image={theme === "light" ? lightBgDesktopImg : darkBgDesktopImg}>
-			{children}
-		</Wrapper>
-	);
+	const backgroundImg =
+		theme === "light" ? lightBgDesktopImg : darkBgDesktopImg;
+	return <Wrapper $image={backgroundImg}>{children}</Wrapper>;
 }
 
 const Wrapper = styled.div`
-	background-image: url(${({ image }) => image});
+	background-image: url(${({ $image }) => $image});
 	background-repeat: no-repeat;
 	height: 100vh;
 	transition: all 0.5s linear;

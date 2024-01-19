@@ -1,6 +1,6 @@
-// import React from 'react';
 import styled from "styled-components";
 import { Sun, Moon } from "react-feather";
+import VisuallyHidden from "../VisuallyHidden";
 
 function Header({ toggleTheme, theme }) {
 	return (
@@ -12,6 +12,7 @@ function Header({ toggleTheme, theme }) {
 				) : (
 					<Sun size={25} color="var(--dark-blue-100)" />
 				)}
+				<VisuallyHidden>Toggle dark/light mode</VisuallyHidden>
 			</ToggleBtn>
 		</Wrapper>
 	);
@@ -39,6 +40,7 @@ const ToggleBtn = styled.button`
 	justify-content: center;
 	align-items: center;
 	background-color: transparent;
+	cursor: pointer;
 `;
 
 export default Header;
