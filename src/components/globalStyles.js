@@ -5,16 +5,4 @@ export const GlobalStyles = createGlobalStyle`
         background: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.text};
     }
-    
-    ol {
-        background-color: ${({ theme }) => theme.listBg};
-    }
-
-    li {
-        color: ${({ theme }) => theme.listText};
-    }
-
-    label {
-        color: ${({ theme }) => theme.label};
-    }
 `;

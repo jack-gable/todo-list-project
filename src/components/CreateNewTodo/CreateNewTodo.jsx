@@ -27,8 +27,8 @@ const TodoInput = styled.input`
 	border: none;
 	border-radius: 8px;
 	padding: 10px 20px;
-	background-color: var(--light-blue-100);
-	color: var(--light-blue-500);
+	background-color: ${({ theme }) => theme.listBg};
+	color: ${({ theme }) => theme.listText};
 	margin-bottom: 16px;
 `;
 

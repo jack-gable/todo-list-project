@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
@@ -6,20 +5,20 @@ import { lightTheme, darkTheme } from "./components/Themes";
 import Header from "./components/Header";
 import Background from "./components/Background/Background";
 import Todos from "./components/Todos/Todos";
+import { useDarkMode } from "./hooks/useDarkMode";
 
 function App() {
-	const [theme, setTheme] = React.useState("light");
+	const [theme, themeToggler] = useDarkMode("light");
 
-	const toggleTheme = () => {
-		theme === "light" ? setTheme("dark") : setTheme("light");
-	};
+	const themeMode = theme === "light" ? lightTheme : darkTheme;
 
 	return (
-		<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+		<ThemeProvider theme={themeMode}>
 			<Background theme={theme}>
 				<Container>
-					<Header toggleTheme={toggleTheme} theme={theme} />
+					<Header toggleTheme={themeToggler} theme={theme} />
 					<Todos />
+					<Footer>Drag and drop to reorder list</Footer>
 				</Container>
 			</Background>
 			<GlobalStyles />
@@ -35,6 +34,17 @@ const Container = styled.div`
 	padding-top: 45px;
 	margin: 0 auto;
 	height: 100%;
+`;
+
+const Footer = styled.p`
+	margin-top: 40px;
+	text-align: center;
+	font-size: 16px;
+
+	@media (min-width: 375px) {
+		font-size: 10px;
+		font-weight: 700;
+	}
 `;
 
 export default App;

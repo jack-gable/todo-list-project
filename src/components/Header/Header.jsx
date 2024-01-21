@@ -8,11 +8,11 @@ function Header({ toggleTheme, theme }) {
 			<Title>Todo</Title>
 			<ToggleBtn onClick={toggleTheme}>
 				{theme === "light" ? (
-					<Moon size={25} color="var(--light-blue-100)" />
+					<Moon size={25} color="white" fill="white" />
 				) : (
-					<Sun size={25} color="var(--dark-blue-100)" />
+					<Sun size={25} color="white" fill="white" />
 				)}
-				<VisuallyHidden>Toggle dark/light mode</VisuallyHidden>
+				<VisuallyHidden>Toggle dark / light mode</VisuallyHidden>
 			</ToggleBtn>
 		</Wrapper>
 	);
@@ -28,6 +28,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
 	text-transform: uppercase;
 	line-height: 1;
+	color: var(--white);
 `;
 
 const ToggleBtn = styled.button`

@@ -1,9 +1,11 @@
 import React from "react";
 import CreateNewTodo from "../CreateNewTodo";
 import TodoList from "../TodoList";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 function Todos() {
-	const [todos, setTodos] = React.useState([]);
+	const [todos, setTodos] = useLocalStorage("todos", []);
+	const [filteredTodos, setFilteredTodos] = React.useState([]);
 
 	function handleCreateTodo(value) {
 		setTodos([
@@ -40,14 +42,43 @@ function Todos() {
 		setTodos(nextTodos);
 	}
 
+	function getTodos() {
+		const todoList = todos;
+		return todoList;
+	}
+
+	React.useEffect(() => {
+		setFilteredTodos(getTodos());
+	}, [todos]);
+
+	function filterTodo(type) {
+		let nextTodos;
+		if (type === "active") {
+			nextTodos = todos.filter((todo) => todo.completed === false);
+		} else if (type === "completed") {
+			nextTodos = todos.filter((todo) => todo.completed === true);
+		}
+
+		return nextTodos;
+	}
+
+	function handleFilterTodos(event) {
+		let filterType = event.target.value;
+		filterType !== "all"
+			? setFilteredTodos(filterTodo(filterType))
+			: setFilteredTodos(getTodos());
+	}
+
 	return (
 		<div>
 			<CreateNewTodo handleCreateTodo={handleCreateTodo} />
 			<TodoList
-				todos={todos}
+				todos={filteredTodos}
+				setTodos={setTodos}
 				handleToggleTodo={handleToggleTodo}
 				handleDeleteTodo={handleDeleteTodo}
 				handleClearCompleted={handleClearCompleted}
+				handleFilterTodos={handleFilterTodos}
 			/>
 		</div>
 	);
