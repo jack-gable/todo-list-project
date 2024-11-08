@@ -1,22 +1,43 @@
 # Todo List App
 
-This todo list app is a mobile-first react app with the ability to toggle between dark/light themes. Its key features include ability to reorder todos, the use of local storage, and a dark/light theme toggle. The inspiration of this app came from [frontendmentor.com](https://frontendmentor.com).
+This todo list app has a slick minimalist design that let's the user easily work and organize their lives. This project features a light/dark theme toggle and also lets users reorganize their todos with drag and drop.
 
-Some of the challenges I faced when creating this application were the overwriting of the default radio styles and the reordering ability of the list. The styles of the checkmark to signal completion of the todo item was challenging because of the inherent difficulties faced when completely restyling html elements like the radio button. This also becomes an issue because the accessibility concerns that are built into the default styles. The reordering of todo list items was also a challenge because of the react works where you are unable to directly query an element of the DOM. I over came this challenge by using the useRef hook to keep track of the reordered item.
+The users todos are kept in LocalStorage for easy access and persistance among re-loads so their work is never lost.
 
-## Technologies Used
+Powered by [React](https://react.dev/). Deployed on [Netlify](https://www.netlify.com/).
 
--   _React_
--   _Styled-Components_
--   _Vite_
--   _Netlify_
+Tech:
 
-## Usage
+<img src="https://skillicons.dev/icons?i=react" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=styledcomponents" alt="skills-icons"/> <img src="https://skillicons.dev/icons?i=netlify" alt="skills-icons"/>
 
-Follow the link below to visit the app. ⬇️
+## To get started
 
-[TodoListApp](https://beamish-horse-c952b8.netlify.app)
+If you want to improve upon this project just fork the repo add your code then submit a pull request, alternatively for a local copy, just clone the repo, simple!
 
-## License
+Then run the following:
 
-[MIT](https://choosealicense.com/licenses/mit/)
+```bash
+npm install
+# then run the dev server
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see TODO List App.
+
+### Packages
+
+TODO List App makes use of the following packages:
+
+- [styled-components](https://styled-components.com/)
+- [react-feather](https://www.npmjs.com/package/react-feather)
+
+#### Learn More
+
+To learn more about React.js, take a look at the following resources:
+
+- [React.js Documentation](https://react.dev/reference/react) - learn about React.js features and API.
+- [Learn React.js](https://react.dev/learn) - an interactive React.js tutorial.
